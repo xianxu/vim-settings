@@ -9,7 +9,7 @@ git clone https://github.com/tpope/vim-fugitive.git .vim/bundle/vim-fugitive
 git clone https://github.com/derekwyatt/vim-scala.git .vim/bundle/vim-scala
 
 echo Building natives
-pushd ~/.vim/bundle/command-t/ruby/command-t
+pushd .vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make
 popd
