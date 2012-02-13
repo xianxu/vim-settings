@@ -103,6 +103,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " map leader q to bd
 map <leader>q :bd<CR>
+" kill buffer without saving.
+map <leader>Q :bd!<CR>
 " reload all buffers
 map <leader><CR> :bufdo e!<CR>
 " deal with space
