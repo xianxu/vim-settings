@@ -1,0 +1,9 @@
+To install vim preferences: 
+  - clone this repo to `vim-settings`
+  - cd to `vim-settings`
+  - run ./.vim-settings-init.sh
+  - copy the .vim and .vimrc file to home
+
+
+
+
