@@ -59,6 +59,7 @@ augroup filetypedetect
   au BufNewFile,BufRead *.thrift set filetype=thrift syntax=thrift
   au BufNewFile,BufRead *.mesos set filetype=python syntax=python
   au BufNewFile,BufRead *.go set filetype=go syntax=go
+  au BufNewFile,BufRead *.sbt set filetype=scala syntax=scala
   au BufRead,BufNewFile README set filetype=mediawiki
 augroup END
 
