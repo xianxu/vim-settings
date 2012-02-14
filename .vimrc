@@ -19,7 +19,7 @@ set vb t_vb=
 set ignorecase smartcase
 set mouse=a
 
-set pastetoggle=<F2>
+set pastetoggle=<F1>
 
 " remap command t keys
 if &term =~ "xterm" || &term =~ "screen"
