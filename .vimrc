@@ -19,8 +19,7 @@ set vb t_vb=
 set ignorecase smartcase
 set mouse=a
 
-" always display status line.
-"set laststatus=2
+set pastetoggle=<F2>
 
 " remap command t keys
 if &term =~ "xterm" || &term =~ "screen"
