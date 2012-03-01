@@ -35,7 +35,7 @@ endif
 set clipboard+=autoselect
 
 " setting spell
-setlocal spell spelllang=en_us
+set spell spelllang=en_us
 " turn spell off by default
 "set spell!
 
