@@ -34,8 +34,17 @@ endif
 " yank to system clipboard
 set clipboard+=autoselect
 
+" setting spell
+setlocal spell spelllang=en_us
+" turn spell off by default
+"set spell!
+
 " toggle display of line number
 nmap <leader>l :set number! number?<cr>
+" toggle display of whitespaces (tabs etc.)
+nmap <leader>w :set listchars!<cr>
+" toggle on and off spelling check
+nmap <leader>s :set spell!<cr>
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
