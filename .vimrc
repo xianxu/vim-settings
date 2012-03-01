@@ -46,6 +46,9 @@ nmap <leader>w :set list!<cr>
 " toggle on and off spelling check
 nmap <leader>s :set spell!<cr>
 
+" correct color for spell check.
+hi SpellLocal ctermbg=lightcyan
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
