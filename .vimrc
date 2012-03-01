@@ -42,7 +42,7 @@ set spell spelllang=en_us
 " toggle display of line number
 nmap <leader>l :set number! number?<cr>
 " toggle display of whitespaces (tabs etc.)
-nmap <leader>w :set listchars!<cr>
+nmap <leader>w :set list!<cr>
 " toggle on and off spelling check
 nmap <leader>s :set spell!<cr>
 
