@@ -5,8 +5,7 @@ filetype plugin indent on
 
 set t_Co=256
 colorscheme summerfruit256
-"colorscheme tir_black
-"
+
 set smartindent autoindent expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
 set hlsearch ruler
@@ -19,7 +18,11 @@ set vb t_vb=
 set ignorecase smartcase
 set mouse=a
 
+" <F1> to toggle paste mode
 set pastetoggle=<F1>
+
+" automatically break long lines.
+set textwidth=100
 
 " remap command t keys
 if &term =~ "xterm" || &term =~ "screen"
@@ -72,6 +75,7 @@ augroup filetypedetect
   au BufNewFile,BufRead *.go set filetype=go syntax=go
   au BufNewFile,BufRead *.sbt set filetype=scala syntax=scala
   au BufRead,BufNewFile README set filetype=mediawiki
+  au BufRead,BufNewFile *.ml set filetype=ocaml
 augroup END
 
 " Remove trailing whitespace from code files on save
