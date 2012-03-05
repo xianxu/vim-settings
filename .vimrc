@@ -126,6 +126,10 @@ map <leader><CR> :bufdo e!<CR>
 " deal with space
 map <leader><SPACE> :call StripTrailingWhitespace()<CR>
 
+" automatically save views
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
 " setting for mac vim
 if has("gui_running")
   set guioptions=-t          " remove toolbox from window
