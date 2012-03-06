@@ -127,8 +127,8 @@ map <leader><CR> :bufdo e!<CR>
 map <leader><SPACE> :call StripTrailingWhitespace()<CR>
 
 " automatically save views
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent loadview
 
 " setting for mac vim
 if has("gui_running")
