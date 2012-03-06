@@ -129,10 +129,10 @@ map <leader><SPACE> :call StripTrailingWhitespace()<CR>
 " automatically save views
 au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
-" create fold
-vmap <leader>f zf<CR>
+" create fold of matching bracket
+map <leader>f v%zf
 " toggle fold
-map <leader>a za<CR>
+map <leader>a za
 
 " setting for mac vim
 if has("gui_running")
