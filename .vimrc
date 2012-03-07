@@ -40,7 +40,7 @@ set clipboard+=autoselect
 " setting spell
 set spell spelllang=en_us
 " turn spell off by default
-"set spell!
+set spell!
 
 " toggle display of line number
 nmap <leader>l :set number! number?<cr>
