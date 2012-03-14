@@ -60,7 +60,7 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-set wildignore+=*.pex,*.o,*.obj,.git,.svm,*.class,*.jar,lib_managed,src_managed,target,dist,*.ico,*.png,*.jpg,*.jpeg,novim*,*.bz2,*.gz,*.tar,*.zip,3rdparty
+set wildignore+=*.pex,*.o,*.obj,.git,.svm,*.class,*.jar,lib_managed,src_managed,target,dist,*.ico,*.png,*.jpg,*.jpeg,novim*,*.bz2,*.gz,*.tar,*.zip,3rdparty,*.lock
 
 " dealing with tabs
 map <leader>] :tabn<CR>
