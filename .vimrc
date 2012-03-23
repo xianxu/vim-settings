@@ -72,6 +72,7 @@ augroup filetypedetect
   au BufNewFile,BufRead Capfile set filetype=ruby syntax=ruby
   au BufNewFile,BufRead *.thrift set filetype=thrift syntax=thrift
   au BufNewFile,BufRead *.mesos set filetype=python syntax=python
+  au BufNewFile,BufRead *.BUILD set filetype=python syntax=python
   au BufNewFile,BufRead *.go set filetype=go syntax=go
   au BufNewFile,BufRead *.sbt set filetype=scala syntax=scala
   au BufRead,BufNewFile README set filetype=mediawiki
@@ -127,8 +128,8 @@ map <leader><CR> :bufdo e!<CR>
 map <leader><SPACE> :call StripTrailingWhitespace()<CR>
 
 " automatically save views
-au BufWinLeave *.* mkview
-au BufWinEnter *.* silent loadview
+"au BufWinLeave *.* mkview
+"au BufWinEnter *.* silent loadview
 " create fold of matching bracket
 map <leader>f v%zf
 " toggle fold
