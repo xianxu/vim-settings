@@ -7,4 +7,4 @@ rm -fr .vim/bundle/neocomplcache
 rm -fr .vim/bundle/nerdcommenter
 rm -fr .vim/bundle/vim-fugitive
 rm -fr .vim/bundle/vim-scala
-
+rm -fr .vim/bundle/vim-markdown
