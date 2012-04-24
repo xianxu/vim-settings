@@ -8,3 +8,4 @@ rm -fr .vim/bundle/nerdcommenter
 rm -fr .vim/bundle/vim-fugitive
 rm -fr .vim/bundle/vim-scala
 rm -fr .vim/bundle/vim-markdown
+rm -fr .vim/bundle/vim-command-w
