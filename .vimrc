@@ -144,3 +144,7 @@ if has("gui_running")
   cnoreabbrev wq w<bar>bd
   cnoreabbrev q bd
 endif
+
+" last opened buffer, only works with one history, better than nothing
+nmap <c-s-t> :b#<CR>
+
