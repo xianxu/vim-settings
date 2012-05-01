@@ -9,6 +9,7 @@ git clone https://github.com/tpope/vim-fugitive.git .vim/bundle/vim-fugitive
 git clone https://github.com/derekwyatt/vim-scala.git .vim/bundle/vim-scala
 git clone https://github.com/tpope/vim-markdown.git .vim/bundle/vim-markdown
 git clone https://github.com/nathanaelkane/vim-command-w.git .vim/bundle/vim-command-w
+git clone https://github.com/jboyens/vim-protobuf.git .vim/bundle/vim-protobuf
 
 echo Building natives
 pushd .vim/bundle/command-t/ruby/command-t

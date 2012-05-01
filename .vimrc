@@ -77,6 +77,7 @@ augroup filetypedetect
   au BufNewFile,BufRead *.sbt set filetype=scala syntax=scala
   au BufRead,BufNewFile README set filetype=mediawiki
   au BufRead,BufNewFile *.ml set filetype=ocaml
+  au BufRead,BufNewFile *.proto set filetype=proto
 augroup END
 
 " Remove trailing whitespace from code files on save
