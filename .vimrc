@@ -1,10 +1,15 @@
 call pathogen#infect()
 
-syntax on
+syntax off
 filetype plugin indent on
 
 set t_Co=256
-colorscheme summerfruit256
+if &diff
+  set wrap
+  colors mayansmoke
+else
+  colorscheme summerfruit256
+end
 
 set smartindent autoindent expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
@@ -122,7 +127,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " map leader q to bd
 map <leader>q :bd<CR>
 " kill buffer without saving.
-map <leader>Q :bd!<CR>
+map <leader>qq :qall!<CR>
 " reload all buffers
 map <leader><CR> :bufdo e!<CR>
 " deal with space
@@ -144,8 +149,8 @@ if has("gui_running")
   " in gui mode, remap quit to buffer kills
   cnoreabbrev wq w<bar>bd
   cnoreabbrev q bd
+  syntax off
 endif
 
 " last opened buffer, only works with one history, better than nothing
 nmap <c-s-t> :b#<CR>
-
