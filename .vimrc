@@ -1,6 +1,6 @@
 call pathogen#infect()
 
-syntax off
+syntax on
 filetype plugin indent on
 
 set t_Co=256
@@ -25,6 +25,8 @@ set mouse=a
 
 " <F1> to toggle paste mode
 set pastetoggle=<F1>
+
+nmap  <Leader>F :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
 
 " automatically break long lines.
 set textwidth=100
@@ -65,7 +67,7 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-set wildignore+=*.pex,*.o,*.obj,.git,.svm,*.class,*.jar,lib_managed,src_managed,target,dist,*.ico,*.png,*.jpg,*.jpeg,novim*,*.bz2,*.gz,*.tar,*.zip,3rdparty,*.lock
+set wildignore+=*.pex,*.o,*.obj,.git,.svm,*.class,*.jar,lib_managed,src_managed,target,dist,*.ico,*.png,*.jpg,*.jpeg,novim*,*.bz2,*.gz,*.tar,*.zip,3rdparty,*.lock,*.pyc
 
 " dealing with tabs
 map <leader>] :tabn<CR>
