@@ -1,7 +1,11 @@
-call pathogen#infect()
+filetype off
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
+
+set nocompatible
+set modelines=0
 
 syntax on
-filetype plugin indent on
 
 set t_Co=256
 if &diff
@@ -11,25 +15,29 @@ else
   colorscheme summerfruit256
 end
 
-set smartindent autoindent expandtab
-set tabstop=2 shiftwidth=2 softtabstop=2
-set hlsearch ruler
+set textwidth=99
+set formatoptions=qrn1
+set colorcolumn=101
+
+set undofile
+set undodir=~/.vim/undodir
+set smartindent autoindent
+set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set hlsearch ruler incsearch showmatch
 set isfname-==
 set list!
-set listchars=tab:>·,trail:·
+set listchars=tab:▸·,trail:·
 " backspace move across line
 set backspace=indent,eol,start
 set vb t_vb=
 set ignorecase smartcase
 set mouse=a
+set incsearch
 
 " <F1> to toggle paste mode
 set pastetoggle=<F1>
 
 nmap  <Leader>F :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
-
-" automatically break long lines.
-set textwidth=100
 
 " remap command t keys
 if &term =~ "xterm" || &term =~ "screen"
