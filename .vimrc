@@ -37,9 +37,10 @@ set incsearch
 " <F1> to toggle paste mode
 set pastetoggle=<F1>
 
-nmap  <Leader>F :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
+nmap  <Leader>f :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
 
 " remap command t keys
+nmap <c-t> :CommandT<CR>
 if &term =~ "xterm" || &term =~ "screen"
   let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
   let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
@@ -168,4 +169,9 @@ nmap <c-s-t> :b#<CR>
 " quit TagmaBufMgr if it's the last
 let g:TagmaBufMgrLastLine = 1
 let g:TagmaBufMgrLastWindow = 1
+
+" easier search of tags
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_extensions = ['tag']
+let g:ctrlp_cmd = 'CtrlPTag'
 
