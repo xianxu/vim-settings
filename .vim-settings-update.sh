@@ -10,6 +10,7 @@ pushd .vim/bundle/vim-scala; git pull; popd
 pushd .vim/bundle/vim-markdown; git pull; popd
 pushd .vim/bundle/vim-command-w; git pull; popd
 pushd .vim/bundle/vim-protobuf; git pull; popd
+pushd .vim/bundle/TagmaBufMgr; git pull; popd
 
 echo Building natives
 pushd .vim/bundle/command-t/ruby/command-t

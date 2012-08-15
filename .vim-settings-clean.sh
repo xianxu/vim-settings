@@ -10,3 +10,4 @@ rm -fr .vim/bundle/vim-scala
 rm -fr .vim/bundle/vim-markdown
 rm -fr .vim/bundle/vim-command-w
 rm -fr .vim/bundle/vim-protobuf
+rm -fr .vim/bundle/TagmaBufMgr

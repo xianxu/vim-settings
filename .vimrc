@@ -164,3 +164,8 @@ endif
 
 " last opened buffer, only works with one history, better than nothing
 nmap <c-s-t> :b#<CR>
+
+" quit TagmaBufMgr if it's the last
+let g:TagmaBufMgrLastLine = 1
+let g:TagmaBufMgrLastWindow = 1
+
