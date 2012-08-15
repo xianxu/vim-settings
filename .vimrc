@@ -37,7 +37,8 @@ set incsearch
 " <F1> to toggle paste mode
 set pastetoggle=<F1>
 
-nmap  <Leader>f :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
+nmap <Leader>FF :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
+nmap <Leader>F :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
 
 " remap command t keys
 nmap <c-t> :CommandT<CR>
