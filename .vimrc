@@ -177,5 +177,19 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " some ascii art stuff
-vnoremap <leader>vd "aygvoOl:s/\%V.\%V/ /g<cr>
-noremap <leader>vp 1v"apgvl<esc>
+vnoremap <leader>vd ma"aygvoOl:s/\%V.\%V/ /g<cr>:nohlsearch<cr>`a
+vnoremap <leader>vc ma"aygvoOly<cr>:nohlsearch<cr>`a
+vnoremap <leader>vb maoOl:s/\%V.\%V/\|/g<cr>:nohlsearch<cr>`a
+vnoremap <leader>v<space> maoOl:s/\%V.\%V/\-/g<cr>:nohlsearch<cr>`a
+noremap <leader>vp ma1vh"apgvly<esc>`a
+
+function! RightAlignVisual() range
+    let [l, r] = [virtcol("'<"), virtcol("'>")]
+    let [l, r] = [min([l, r]), max([l, r])]
+    exe "'<,'>" 's/\%'.l.'v.*\%<'.(r+1).'v./\=StrPadLeft(submatch(0),r-l+1)'
+endfunction
+function! StrPadLeft(s, w)
+    let s = substitute(a:s, '^\s\+\|\s\+$', '', 'g')
+    return repeat(' ', a:w - strwidth(s)) . s
+endfunction
+vnoremap <leader>vr :call RightAlignVisual()<cr>
