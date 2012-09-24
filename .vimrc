@@ -22,11 +22,8 @@ set colorcolumn=101
 set undofile
 set undodir=~/.vim/undodir
 set smartindent autoindent
-set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set hlsearch ruler incsearch showmatch
 set isfname-==
-set list!
-set listchars=tab:▸·,trail:·
 " backspace move across line
 set backspace=indent,eol,start
 set vb t_vb=
@@ -92,6 +89,12 @@ augroup filetypedetect
   au BufRead,BufNewFile *.ml set filetype=ocaml
   au BufRead,BufNewFile *.proto set filetype=proto
 augroup END
+
+autocmd FileType scala setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType java setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType scala setlocal listchars=tab:▸·,trail:·
+autocmd FileType java setlocal listchars=tab:▸·,trail:·
+autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " Remove trailing whitespace from code files on save
 function! StripTrailingWhitespace()
@@ -193,3 +196,8 @@ function! StrPadLeft(s, w)
     return repeat(' ', a:w - strwidth(s)) . s
 endfunction
 vnoremap <leader>vr :call RightAlignVisual()<cr>
+
+" xiki
+"let $XIKI_DIR = '/usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/'
+"source /usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/etc/vim/xiki.vim
+
