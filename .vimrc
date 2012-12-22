@@ -92,8 +92,10 @@ augroup END
 
 autocmd FileType scala setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType java setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType scala setlocal listchars=tab:▸·,trail:·
 autocmd FileType java setlocal listchars=tab:▸·,trail:·
+autocmd FileType ruby setlocal listchars=tab:▸·,trail:·
 autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " Remove trailing whitespace from code files on save
