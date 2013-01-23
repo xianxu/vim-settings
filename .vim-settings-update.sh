@@ -12,6 +12,7 @@ pushd .vim/bundle/vim-command-w; git pull; popd
 pushd .vim/bundle/vim-protobuf; git pull; popd
 pushd .vim/bundle/ctrlp.vim; git pull; popd
 pushd .vim/bundle/splice; git pull; popd
+pushd .vim/bundle/vim-characterize; git pull; popd
 
 echo Building natives
 pushd .vim/bundle/command-t/ruby/command-t
