@@ -22,11 +22,8 @@ set colorcolumn=101
 set undofile
 set undodir=~/.vim/undodir
 set smartindent autoindent
-set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set hlsearch ruler incsearch showmatch
 set isfname-==
-set list!
-set listchars=tab:▸·,trail:·
 " backspace move across line
 set backspace=indent,eol,start
 set vb t_vb=
@@ -37,19 +34,15 @@ set incsearch
 " <F1> to toggle paste mode
 set pastetoggle=<F1>
 
-nmap <Leader>FF :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
-nmap <Leader>F :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
+nnoremap <Leader>FF :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
+nnoremap <Leader>F :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
 
 " remap command t keys
-nmap <c-t> :CommandT<CR>
 if &term =~ "xterm" || &term =~ "screen"
   let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
   let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
   let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 endif
-
-" what does this do?
-"set paste
 
 " yank to system clipboard
 set clipboard+=autoselect
@@ -60,11 +53,11 @@ set spell spelllang=en_us
 set spell!
 
 " toggle display of line number
-nmap <leader>l :set number! number?<cr>
+nnoremap <leader>l :set number! number?<cr>
 " toggle display of whitespaces (tabs etc.)
-nmap <leader>w :set list!<cr>
+nnoremap <leader>w :set list!<cr>
 " toggle on and off spelling check
-nmap <leader>s :set spell!<cr>
+nnoremap <leader>s :set spell!<cr>
 
 " correct color for spell check.
 hi SpellLocal ctermbg=lightcyan
@@ -80,8 +73,8 @@ autocmd BufReadPost *
 set wildignore+=*.pex,*.o,*.obj,.git,.svm,*.class,*.jar,lib_managed,src_managed,target,dist,*.ico,*.png,*.jpg,*.jpeg,novim*,*.bz2,*.gz,*.tar,*.zip,3rdparty,*.lock,*.pyc
 
 " dealing with tabs
-map <leader>] :tabn<CR>
-map <leader>[ :tabp<CR>
+nnoremap <leader>] :tabn<CR>
+nnoremap <leader>[ :tabp<CR>
 
 " custom file type and syntax color
 augroup filetypedetect
@@ -96,6 +89,14 @@ augroup filetypedetect
   au BufRead,BufNewFile *.ml set filetype=ocaml
   au BufRead,BufNewFile *.proto set filetype=proto
 augroup END
+
+autocmd FileType scala setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType java setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType scala setlocal listchars=tab:▸·,trail:·
+autocmd FileType java setlocal listchars=tab:▸·,trail:·
+autocmd FileType ruby setlocal listchars=tab:▸·,trail:·
+autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " Remove trailing whitespace from code files on save
 function! StripTrailingWhitespace()
@@ -137,21 +138,21 @@ let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " map leader q to bd
-map <leader>q :bd<CR>
+noremap <leader>q :bd<CR>
 " kill buffer without saving.
-map <leader>qq :qall!<CR>
+noremap <leader>qq :qall!<CR>
 " reload all buffers
-map <leader><CR> :bufdo e!<CR>
+noremap <leader><CR> :bufdo e!<CR>
 " deal with space
-map <leader><SPACE> :call StripTrailingWhitespace()<CR>
+noremap <leader><SPACE> :call StripTrailingWhitespace()<CR>
 
 " automatically save views
 "au BufWinLeave *.* mkview
 "au BufWinEnter *.* silent loadview
 " create fold of matching bracket
-map <leader>f v%zf
+noremap <leader>f v%zf
 " toggle fold
-map <leader>a za
+noremap <leader>a za
 
 " setting for mac vim
 if has("gui_running")
@@ -161,18 +162,44 @@ if has("gui_running")
   " in gui mode, remap quit to buffer kills
   cnoreabbrev wq w<bar>bd
   cnoreabbrev q bd
-  syntax off
+  "syntax off
 endif
 
 " last opened buffer, only works with one history, better than nothing
-nmap <c-s-t> :b#<CR>
+nnoremap <c-s-t> :b#<CR>
 
 " quit TagmaBufMgr if it's the last
-let g:TagmaBufMgrLastLine = 1
-let g:TagmaBufMgrLastWindow = 1
+"let g:TagmaBufMgrLastLine = 1
+"let g:TagmaBufMgrLastWindow = 1
 
 " easier search of tags
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_cmd = 'CtrlPTag'
+
+" shortcuts to load .vimrc and source it
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" some ascii art stuff
+vnoremap <leader>vd ma"aygvoOl:s/\%V.\%V/ /g<cr>:nohlsearch<cr>`a
+vnoremap <leader>vc ma"aygvoOly<cr>:nohlsearch<cr>`a
+vnoremap <leader>vb maoOl:s/\%V.\%V/\|/g<cr>:nohlsearch<cr>`a
+vnoremap <leader>v<space> maoOl:s/\%V.\%V/\-/g<cr>:nohlsearch<cr>`a
+noremap <leader>vp ma1vh"apgvly<esc>`a
+
+function! RightAlignVisual() range
+    let [l, r] = [virtcol("'<"), virtcol("'>")]
+    let [l, r] = [min([l, r]), max([l, r])]
+    exe "'<,'>" 's/\%'.l.'v.*\%<'.(r+1).'v./\=StrPadLeft(submatch(0),r-l+1)'
+endfunction
+function! StrPadLeft(s, w)
+    let s = substitute(a:s, '^\s\+\|\s\+$', '', 'g')
+    return repeat(' ', a:w - strwidth(s)) . s
+endfunction
+vnoremap <leader>vr :call RightAlignVisual()<cr>
+
+" xiki
+"let $XIKI_DIR = '/usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/'
+"source /usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/etc/vim/xiki.vim
 
