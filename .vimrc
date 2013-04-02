@@ -188,6 +188,9 @@ vnoremap <leader>vb maoOl:s/\%V.\%V/\|/g<cr>:nohlsearch<cr>`a
 vnoremap <leader>v<space> maoOl:s/\%V.\%V/\-/g<cr>:nohlsearch<cr>`a
 noremap <leader>vp ma1vh"apgvly<esc>`a
 
+" comment and copy
+vnoremap <leader>C yPgv:call NERDComment(1, 'sexy')<cr>
+
 function! RightAlignVisual() range
     let [l, r] = [virtcol("'<"), virtcol("'>")]
     let [l, r] = [min([l, r]), max([l, r])]
