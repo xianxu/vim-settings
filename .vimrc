@@ -15,6 +15,9 @@ else
   colorscheme summerfruit256
 end
 
+" config vim-airline
+set laststatus=2
+
 set textwidth=99
 set formatoptions=qrn1
 set colorcolumn=101
@@ -85,6 +88,7 @@ augroup filetypedetect
   au BufNewFile,BufRead *BUILD* set filetype=python syntax=python
   au BufNewFile,BufRead *.go set filetype=go syntax=go
   au BufNewFile,BufRead *.sbt set filetype=scala syntax=scala
+  au BufNewFile,BufRead *.js set filetype=javascript syntax=javascript
   au BufRead,BufNewFile README set filetype=mediawiki
   au BufRead,BufNewFile *.ml set filetype=ocaml
   au BufRead,BufNewFile *.proto set filetype=proto
@@ -93,6 +97,7 @@ augroup END
 autocmd FileType scala setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType java setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType js setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType scala setlocal listchars=tab:▸·,trail:·
 autocmd FileType java setlocal listchars=tab:▸·,trail:·
 autocmd FileType ruby setlocal listchars=tab:▸·,trail:·
@@ -157,7 +162,7 @@ noremap <leader>a za
 " setting for mac vim
 if has("gui_running")
   set guioptions=-t          " remove toolbox from window
-  set gfn=Monaco:h13         " default font
+  set gfn=Monaco:h15         " default font
   set guioptions+=a          " for macvim to copy on select
   " in gui mode, remap quit to buffer kills
   cnoreabbrev wq w<bar>bd
