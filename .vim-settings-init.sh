@@ -13,6 +13,7 @@ git clone https://github.com/jboyens/vim-protobuf.git .vim/bundle/vim-protobuf
 git clone https://github.com/kien/ctrlp.vim.git .vim/bundle/ctrlp.vim
 git clone https://github.com/sjl/splice.vim.git .vim/bundle/splice
 git clone git://github.com/tpope/vim-characterize.git .vim/bundle/vim-characterize
+git clone https://github.com/bling/vim-airline.git .vim/bundle/vim-airline
 
 echo Building natives
 pushd .vim/bundle/command-t/ruby/command-t

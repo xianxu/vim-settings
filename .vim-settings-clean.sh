@@ -11,5 +11,6 @@ rm -fr .vim/bundle/vim-markdown
 rm -fr .vim/bundle/vim-command-w
 rm -fr .vim/bundle/vim-protobuf
 rm -fr .vim/bundle/splice
-rm -fr .vim/bundle/vim-characterize
 rm -fr .vim/bundle/ctrlp.vim
+rm -fr .vim/bundle/vim-airline
+rm -fr .vim/bundle/vim-characterize
