@@ -17,6 +17,7 @@ end
 
 " config vim-airline
 set laststatus=2
+let g:airline_theme='light'
 
 set textwidth=99
 set formatoptions=qrn1
