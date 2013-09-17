@@ -163,7 +163,7 @@ noremap <leader>a za
 " setting for mac vim
 if has("gui_running")
   set guioptions=-t          " remove toolbox from window
-  set gfn=Monaco:h15         " default font
+  set gfn=Inconsolata:h15    " default font
   set guioptions+=a          " for macvim to copy on select
   " in gui mode, remap quit to buffer kills
   cnoreabbrev wq w<bar>bd
