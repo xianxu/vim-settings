@@ -82,6 +82,7 @@ nnoremap <leader>[ :tabp<CR>
 
 " custom file type and syntax color
 augroup filetypedetect
+  au BufNewFile,BufRead *.rs set filetype=rust syntax=rust
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
   au BufNewFile,BufRead Capfile set filetype=ruby syntax=ruby
   au BufNewFile,BufRead *.thrift set filetype=thrift syntax=thrift
