@@ -60,8 +60,8 @@ set spell!
 nnoremap <leader>l :set number! number?<cr>
 " toggle display of whitespaces (tabs etc.)
 nnoremap <leader>w :set list!<cr>
-" toggle on and off spelling check
-nnoremap <leader>s :set spell!<cr>
+" sort
+vnoremap <leader>s :sort<cr>
 
 " correct color for spell check.
 hi SpellLocal ctermbg=lightcyan
