@@ -49,6 +49,7 @@ if &term =~ "xterm" || &term =~ "screen"
 endif
 
 " yank to system clipboard
+"set clipboard+=unnamedplus   " have this on remote machine.
 set clipboard+=autoselect
 
 " setting spell
@@ -214,6 +215,3 @@ vnoremap <leader>vr :call RightAlignVisual()<cr>
 " xiki
 "let $XIKI_DIR = '/usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/'
 "source /usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/etc/vim/xiki.vim
-
-vmap "+y :!xclip -f -sel clip
-map "+p :r!xclip -o -sel clip
