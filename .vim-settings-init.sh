@@ -15,9 +15,15 @@ git clone https://github.com/sjl/splice.vim.git .vim/bundle/splice
 git clone https://github.com/tpope/vim-characterize.git .vim/bundle/vim-characterize
 git clone https://github.com/bling/vim-airline.git .vim/bundle/vim-airline
 git clone https://github.com/jpalardy/vim-slime.git .vim/bundle/vim-slime
+git clone https://github.com/Shougo/vimproc.vim.git .vim/bundle/vimproc.vim
+git clone https://github.com/scrooloose/syntastic.git .vim/bundle/syntastic
 
 echo Building natives
 pushd .vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
+make
+popd
+
+pushd .vim/bundle/vimproc.vim
 make
 popd
