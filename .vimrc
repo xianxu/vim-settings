@@ -96,7 +96,7 @@ augroup filetypedetect
   au BufRead,BufNewFile *.proto set filetype=proto
 augroup END
 
-autocmd FileType haskell setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType haskell setlocal expandtab list! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType scala setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType java setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
@@ -215,3 +215,5 @@ vnoremap <leader>vr :call RightAlignVisual()<cr>
 "let $XIKI_DIR = '/usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/'
 "source /usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/etc/vim/xiki.vim
 
+vmap "+y :!xclip -f -sel clip
+map "+p :r!xclip -o -sel clip
