@@ -17,6 +17,7 @@ git clone https://github.com/bling/vim-airline.git .vim/bundle/vim-airline
 git clone https://github.com/jpalardy/vim-slime.git .vim/bundle/vim-slime
 git clone https://github.com/Shougo/vimproc.vim.git .vim/bundle/vimproc.vim
 git clone https://github.com/scrooloose/syntastic.git .vim/bundle/syntastic
+git clone https://github.com/eagletmt/neco-ghc.git .vim/bundle/neco-ghc
 
 echo Building natives
 pushd .vim/bundle/command-t/ruby/command-t
