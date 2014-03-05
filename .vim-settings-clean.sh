@@ -18,5 +18,7 @@ rm -fr .vim/bundle/vim-airline
 rm -fr .vim/bundle/vimproc.vim
 rm -fr .vim/bundle/syntastic
 rm -fr .vim/bundle/neco-ghc
+rm -fr .vim/bundle/tabular
+
 
 

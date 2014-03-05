@@ -18,6 +18,8 @@ pushd .vim/bundle/vim-slime; git pull; popd
 pushd .vim/bundle/vimproc.vim; git pull; popd
 pushd .vim/bundle/syntastic; git pull; popd
 pushd .vim/bundle/neco-ghc; git pull; popd
+pushd .vim/bundle/tabular; git pull; popd
+
 
 echo Building natives
 pushd .vim/bundle/command-t/ruby/command-t
