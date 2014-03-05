@@ -219,7 +219,3 @@ vnoremap <leader>vr :call RightAlignVisual()<cr>
 "let $XIKI_DIR = '/usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/'
 "source /usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/etc/vim/xiki.vim
 
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['ruby', 'haskell'],
-                           \ 'passive_filetypes': ['scala', 'java'] }
-
