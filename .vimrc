@@ -100,7 +100,7 @@ augroup END
 set shiftround                  "Round spaces to nearest shiftwidth multiple
 set nojoinspaces                "Don't convert spaces to tabs
 
-autocmd FileType haskell setlocal expandtab list! tabstop=8 shiftwidth=4 softtabstop=4
+autocmd FileType haskell setlocal expandtab list! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType scala setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType java setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
