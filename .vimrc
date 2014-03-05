@@ -219,3 +219,16 @@ vnoremap <leader>vr :call RightAlignVisual()<cr>
 "let $XIKI_DIR = '/usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/'
 "source /usr/local/rvm/gems/ree-1.8.7-2011.03@twitter/gems/xiki-0.6.3/etc/vim/xiki.vim
 
+" Tabularize
+"let mapleader=','
+"if exists(":Tabularize")
+"  nmap <Leader>a= :Tabularize /=<CR>
+"  vmap <Leader>a= :Tabularize /=<CR>
+"  nmap <Leader>a: :Tabularize /:\zs<CR>
+"  vmap <Leader>a: :Tabularize /:\zs<CR>
+"endif
+
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['ruby', 'haskell'],
+                           \ 'passive_filetypes': ['scala', 'java'] }
+
