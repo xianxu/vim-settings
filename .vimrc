@@ -41,12 +41,10 @@ set pastetoggle=<F1>
 nnoremap <Leader>FF :let @*=expand("%:p")<cr>:echo "Copied file path to clipboard"<cr>
 nnoremap <Leader>F :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
 
-" remap command t keys
-if &term =~ "xterm" || &term =~ "screen"
-  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
-endif
+"nnoremap t :Unite file_rec/async<cr>
+"let g:unite_source_file_rec_max_cache_files=100000
+"call unite#custom#source('file_mru,file_rec,file_rec/async,grepocate',
+"            \ 'max_candidates', 0)
 
 " yank to system clipboard
 "set clipboard+=unnamedplus   " have this on remote machine.
@@ -187,8 +185,9 @@ nnoremap <c-s-t> :b#<CR>
 
 " easier search of tags
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_extensions = ['tag']
-let g:ctrlp_cmd = 'CtrlPTag'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:100'
+let g:ctrlp_max_files=100000
 
 " shortcuts to load .vimrc and source it
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
