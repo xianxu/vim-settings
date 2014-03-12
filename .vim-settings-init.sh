@@ -2,7 +2,6 @@
 
 # overlaying other repositories on top
 echo Getting plugins
-git clone https://github.com/wincent/Command-T.git .vim/bundle/command-t
 git clone https://github.com/Shougo/neocomplcache .vim/bundle/neocomplcache
 git clone https://github.com/scrooloose/nerdcommenter.git .vim/bundle/nerdcommenter
 git clone https://github.com/tpope/vim-fugitive.git .vim/bundle/vim-fugitive
@@ -21,11 +20,6 @@ git clone https://github.com/eagletmt/neco-ghc.git .vim/bundle/neco-ghc
 git clone https://github.com/godlygeek/tabular.git .vim/bundle/tabular
 
 echo Building natives
-pushd .vim/bundle/command-t/ruby/command-t
-ruby extconf.rb
-make
-popd
-
 pushd .vim/bundle/vimproc.vim
 make
 popd
