@@ -18,7 +18,7 @@ pushd .vim/bundle/vimproc.vim; git pull; popd
 pushd .vim/bundle/syntastic; git pull; popd
 pushd .vim/bundle/neco-ghc; git pull; popd
 pushd .vim/bundle/tabular; git pull; popd
-
+pushd .vim/bundle/html-template-syntax; git pull; popd
 
 echo Building natives
 pushd .vim/bundle/vimproc.vim

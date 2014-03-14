@@ -18,6 +18,7 @@ git clone https://github.com/Shougo/vimproc.vim.git .vim/bundle/vimproc.vim
 git clone https://github.com/scrooloose/syntastic.git .vim/bundle/syntastic
 git clone https://github.com/eagletmt/neco-ghc.git .vim/bundle/neco-ghc
 git clone https://github.com/godlygeek/tabular.git .vim/bundle/tabular
+git clone https://github.com/pbrisbin/html-template-syntax.git .vim/bundle/html-template-syntax
 
 echo Building natives
 pushd .vim/bundle/vimproc.vim
