@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # overlaying other repositories on top
 echo Getting plugins
