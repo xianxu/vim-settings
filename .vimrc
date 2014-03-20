@@ -47,7 +47,10 @@ nnoremap <Leader>F :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard
 "            \ 'max_candidates', 0)
 
 " yank to system clipboard
-"set clipboard+=unnamedplus   " have this on remote machine.
+" For Linux, a hack, not sure why a single copy won't work...
+"vnoremap y ygvygvy
+"set clipboard+=unnamedplus
+" For Mac
 set clipboard+=autoselect
 
 " setting spell
