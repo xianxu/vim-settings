@@ -191,6 +191,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:100'
 let g:ctrlp_max_files=100000
+let g:ctrlp_working_path_mode = 'ca'
 
 " shortcuts to load .vimrc and source it
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -233,4 +234,20 @@ vnoremap <leader>vr :call RightAlignVisual()<cr>
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['ruby', 'haskell'],
                            \ 'passive_filetypes': ['scala', 'java'] }
+
+" Browse file in cgit (Cgit! for copy to clipboard)
+function! s:Cgit(bang)
+  let repo = substitute(system('basename `git rev-parse --show-toplevel`'), '\n$', '', '') 
+  let repo_root = substitute(system('git rev-parse --show-toplevel'), '\n$', '', '') 
+  let abs_path = expand("%:p")
+  let rel_path = substitute(abs_path, '^'.repo_root.'/', '', '')
+  let url = 'https://cgit.twitter.biz/'.repo.'/tree/'.rel_path.'#n'.line(".")
+  if a:bang
+    let @* = url 
+    echom url 
+  else
+    call system('git web--browse '.'"'.url.'"')
+  endif
+endfunction
+command! -bang Cgit call <SID>Cgit(<bang>0)
 
