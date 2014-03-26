@@ -252,10 +252,17 @@ function! s:Cgit(bang)
 endfunction
 command! -bang Cgit call <SID>Cgit(<bang>0)
 
-let g:Tb_VSplit=40
+let g:Tb_VSplit=30
 let Tb_MaxSize=0
 hi VertSplit guifg=bg guibg=#bbbbbb ctermfg=bg ctermbg=grey
 hi ColorColumn guifg=#eeeeee guibg=#eeeeee ctermfg=grey ctermbg=grey
 
+" auto complete with :e command
 set wildmenu
 set wildmode=list:longest
+
+" buffer saving
+set autowrite
+set hidden
+set sessionoptions=buffers
+
