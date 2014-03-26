@@ -254,5 +254,5 @@ command! -bang Cgit call <SID>Cgit(<bang>0)
 
 let g:Tb_VSplit=40
 let Tb_MaxSize=0
-hi VertSplit guifg=bg guibg=#bbbbbb
-hi ColorColumn guifg=#eeeeee guibg=#eeeeee
+hi VertSplit guifg=bg guibg=#bbbbbb ctermfg=bg ctermbg=grey
+hi ColorColumn guifg=#eeeeee guibg=#eeeeee ctermfg=grey ctermbg=grey
