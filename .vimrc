@@ -266,3 +266,6 @@ set autowrite
 set hidden
 set sessionoptions=buffers
 
+nnoremap <C-Up> :bprevious<cr>
+nnoremap <C-Down> :bnext<cr>
+
