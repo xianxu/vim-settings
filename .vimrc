@@ -173,6 +173,7 @@ if has("gui_running")
   set guioptions=-t          " remove toolbox from window
   set gfn=Inconsolata-dz:h15    " default font
   set guioptions+=a          " for macvim to copy on select
+  set guioptions+=r
   " in gui mode, remap quit to buffer kills
   cnoreabbrev wq w<bar>bd
   cnoreabbrev q bd
@@ -269,3 +270,4 @@ set sessionoptions=buffers
 nnoremap <C-Up> :bprevious<cr>
 nnoremap <C-Down> :bnext<cr>
 
+hi Tb_VisibleNormal guifg=#006600 guibg=#bbeebb ctermbg=green ctermbg=lightgreen
