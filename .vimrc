@@ -256,7 +256,7 @@ command! -bang Cgit call <SID>Cgit(<bang>0)
 let g:Tb_VSplit=30
 let Tb_MaxSize=0
 hi VertSplit guifg=bg guibg=#bbbbbb ctermfg=bg ctermbg=grey
-hi ColorColumn guifg=#eeeeee guibg=#eeeeee ctermfg=grey ctermbg=grey
+hi ColorColumn guibg=#eeeeee ctermbg=grey
 
 " auto complete with :e command
 set wildmenu
