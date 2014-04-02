@@ -275,3 +275,12 @@ vnoremap <C-Up> <esc>:bprevious<cr>
 vnoremap <C-Down> <esc>:bnext<cr>
 
 hi Tb_VisibleNormal guifg=#006600 guibg=#bbeebb ctermbg=green ctermbg=lightgreen
+
+" for the following to work on macvim, I seems need to do:
+" :e $VIMRUNTIME/menu.vim
+" search d-w and comment out that line
+if has('gui_macvim')
+  macmenu File.Close key=<nop>
+  map <D-w> :bd<cr>
+endif
+
