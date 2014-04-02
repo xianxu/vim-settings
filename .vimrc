@@ -269,5 +269,9 @@ set sessionoptions=buffers
 
 nnoremap <C-Up> :bprevious<cr>
 nnoremap <C-Down> :bnext<cr>
+inoremap <C-Up> <esc>:bprevious<cr>
+inoremap <C-Down> <esc>:bnext<cr>
+vnoremap <C-Up> <esc>:bprevious<cr>
+vnoremap <C-Down> <esc>:bnext<cr>
 
 hi Tb_VisibleNormal guifg=#006600 guibg=#bbeebb ctermbg=green ctermbg=lightgreen
