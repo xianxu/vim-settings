@@ -233,7 +233,7 @@ vnoremap <leader>vr :call RightAlignVisual()<cr>
 "  vmap <Leader>a: :Tabularize /:\zs<CR>
 "endif
 
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['ruby', 'haskell'],
                            \ 'passive_filetypes': ['scala', 'java'] }
 
@@ -255,8 +255,8 @@ command! -bang Cgit call <SID>Cgit(<bang>0)
 
 let g:Tb_VSplit=30
 let Tb_MaxSize=0
-hi VertSplit guifg=bg guibg=#bbbbbb ctermfg=bg ctermbg=grey
-hi ColorColumn guibg=#eeeeee ctermbg=grey
+hi VertSplit guifg=bg guibg=#cccccc ctermfg=bg ctermbg=grey
+hi ColorColumn guibg=#f6f6f6 ctermbg=grey
 
 " auto complete with :e command
 set wildmenu
