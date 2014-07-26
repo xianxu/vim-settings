@@ -19,9 +19,9 @@ end
 set laststatus=2
 let g:airline_theme='light'
 
-set textwidth=99
+set textwidth=80
 set formatoptions=qrn1
-set colorcolumn=101
+set colorcolumn=81
 
 set undofile
 set undodir=~/.vim/undodir
@@ -48,10 +48,11 @@ nnoremap <Leader>F :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard
 
 " yank to system clipboard
 " For Linux, a hack, not sure why a single copy won't work...
-"vnoremap y ygvygvy
-"set clipboard+=unnamedplus
+set clipboard=unnamedplus,autoselect
+" Or if it doesn't work, remap y
+" vnoremap y y:call system("xclip -i -selection c", getreg("\""))<CR>
 " For Mac
-set clipboard+=autoselect
+"set clipboard+=autoselect
 
 " setting spell
 set spell spelllang=en_us
@@ -76,7 +77,8 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-set wildignore+=*.pex,*.o,*.obj,.git,.svm,*.class,*.jar,lib_managed,src_managed,target,dist,*.ico,*.png,*.jpg,*.jpeg,novim*,*.bz2,*.gz,*.tar,*.zip,3rdparty,*.lock,*.pyc
+set wildignore+=*.pex,*.o,*.obj,.git,.svm,*.class,*.jar,lib_managed,src_managed,target,dist,
+           \*.ico,*.png,*.jpg,*.jpeg,novim*,*.bz2,*.gz,*.tar,*.zip,3rdparty,*.lock,*.pyc
 
 " dealing with tabs
 nnoremap <leader>] :tabn<CR>
@@ -101,16 +103,13 @@ augroup END
 set shiftround                  "Round spaces to nearest shiftwidth multiple
 set nojoinspaces                "Don't convert spaces to tabs
 
+autocmd FileType cpp setlocal expandtab list! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType haskell setlocal expandtab list! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType scala setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType java setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType js setlocal expandtab list! tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType haskell setlocal listchars=tab:▸·,trail:·
-autocmd FileType scala setlocal listchars=tab:▸·,trail:·
-autocmd FileType java setlocal listchars=tab:▸·,trail:·
-autocmd FileType ruby setlocal listchars=tab:▸·,trail:·
-autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType go setlocal expandtab list! tabstop=4 shiftwidth=4 softtabstop=4
 
 " Remove trailing whitespace from code files on save
 function! StripTrailingWhitespace()
@@ -194,6 +193,7 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:100'
 let g:ctrlp_max_files=100000
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_root_markers = ['.cp']
+let g:ctrlp_follow_symlinks = 1
 
 " shortcuts to load .vimrc and source it
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -256,7 +256,7 @@ command! -bang Cgit call <SID>Cgit(<bang>0)
 let g:Tb_VSplit=30
 let Tb_MaxSize=0
 hi VertSplit guifg=bg guibg=#cccccc ctermfg=bg ctermbg=grey
-hi ColorColumn guibg=#f6f6f6 ctermbg=grey
+hi ColorColumn guibg=#f6f6f6 ctermbg=lightgrey
 
 " auto complete with :e command
 set wildmenu
@@ -283,3 +283,4 @@ if has('gui_macvim')
   map <D-w> :bd<cr>
 endif
 
+nnoremap <LEADER>c viwy
