@@ -347,3 +347,7 @@ nmap <silent> ˚ :wincmd l<CR>
 nmap <silent> ∆ :wincmd h<CR>
 
 let g:solarized_diffmode="high"
+highlight CursorLine ctermbg=153
+highlight CursorColumn ctermbg=153
+nnoremap <leader>h :set cursorcolumn!<cr>:set cursorline!<cr>
+
